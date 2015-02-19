@@ -1,0 +1,1 @@
+(require 'replace-from-region)
