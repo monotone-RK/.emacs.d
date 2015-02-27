@@ -50,6 +50,7 @@
     multiple-cursors
     phi-search
     replace-from-region
+    dirtree
     ))
 
 (let ((not-installed (loop for x in installing-package-list
