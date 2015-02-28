@@ -51,6 +51,7 @@
     phi-search
     replace-from-region
     dirtree
+    migemo
     ))
 
 (let ((not-installed (loop for x in installing-package-list
