@@ -52,6 +52,10 @@
     replace-from-region
     dirtree
     migemo
+    helm
+    helm-swoop
+    helm-migemo
+    ace-isearch
     ))
 
 (let ((not-installed (loop for x in installing-package-list
