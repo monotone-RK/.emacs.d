@@ -37,7 +37,7 @@
     jinja2-mode
     go-mode
     go-autocomplete
-    scala-mode2
+    scala-mode
     haskell-mode
     gnuplot-mode
     rainbow-delimiters
