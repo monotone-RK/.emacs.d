@@ -56,6 +56,7 @@
     helm-swoop
     helm-migemo
     ace-isearch
+    opencl-mode
     ))
 
 (let ((not-installed (loop for x in installing-package-list
