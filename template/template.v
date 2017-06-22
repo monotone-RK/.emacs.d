@@ -1,53 +1,44 @@
 `timescale 1ns / 1ps
 `default_nettype none
 module test;
-  parameter clock_half_period = 10;
+  parameter clock_half_period = 5;
   
   /* input */   
   reg CLK;
-  reg RST_X;
+  reg RST;
   
   /* output */   
   wire ULED;
 
-  initial begin
-    CLK = 0;
-    forever #(clock_half_period) CLK = ~CLK;
-  end
+  // Clock and Reset Generator
+  initial begin CLK = 0; forever #(clock_half_period) CLK = ~CLK; end
+  initial begin RST = 1; #1000; RST = 0; end
   
-  initial begin
-    RST_X = 1;
-    #1000;
-    RST_X = 0;
-    #1000;
-    RST_X = 1;
-  end
+  L_TIKA uut(CLK, RST, ULED);
   
-  L_TIKA uut(CLK, RST_X, ULED);
-  
+  // get waveform data
   initial begin
     $dumpfile("uut.vcd");
     $dumpvars(0, uut);
   end
+
+  // simulation finish flag
+  always @(posedge CLK) if (uut.cnt == 30) $finish();
   
-  initial begin
-    #10000;
-    $finish;
-  end
 endmodule
 
 module L_TIKA #(parameter   WIDTH = 32)
                (input  wire CLK, 
-                input  wire RST_X, 
+                input  wire RST, 
                 output wire ULED);
   
   reg [WIDTH-1:0] cnt;
   
   assign ULED = cnt[2];
-
+  
   always @(posedge CLK) begin
-    if (!RST_X) cnt <= 0;
-    else        cnt <= cnt + 1;
+    if (RST) cnt <= 0;
+    else     cnt <= cnt + 1;
   end
 
 endmodule
