@@ -55,6 +55,7 @@
     helm
     helm-swoop
     helm-migemo
+    helm-gtags
     ace-isearch
     opencl-mode
     ))

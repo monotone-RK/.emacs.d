@@ -4,6 +4,7 @@
        '(
 	 ("\\.c$" . c++-mode)
 	 ("\\.h$" . c++-mode)
+	 ("\\.tcc$" . c++-mode)
 	 ("\\.ino$" . c++-mode)
 	 )
        auto-mode-alist))
