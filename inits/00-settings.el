@@ -109,8 +109,12 @@
 (setq read-file-name-completion-ignore-case t)
 
 ;; move the cursor to a place that you have edited before
-(load "saveplace")
-(setq-default save-place t)
+(require 'saveplace)
+(cond ((string-match "24." emacs-version) ;;; For Emacs 24
+       (setq-default save-place t))
+      (t                                  ;;; For Emacs more than version 25
+       (save-place-mode 1))
+)
 
 ;; Don't make backup files
 (setq make-backup-files nil)
