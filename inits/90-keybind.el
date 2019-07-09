@@ -16,8 +16,8 @@
 (global-set-key "\C-xT" 'google-translate-query-translate)
 
 ;; expand-region
-(global-set-key (kbd "C-,") 'er/expand-region)
-(global-set-key (kbd "C-M-,") 'er/contract-region)
+(global-set-key (kbd "C-o") 'er/expand-region)
+(global-set-key (kbd "C-M-o") 'er/contract-region)
 
 ;; multiple-cursors
 (define-key region-bindings-mode-map "a" 'mc/mark-all-like-this)
