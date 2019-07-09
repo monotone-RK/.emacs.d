@@ -60,6 +60,7 @@
     opencl-mode
     lua-mode
     yatex
+    hlinum
     ))
 
 (let ((not-installed (loop for x in installing-package-list

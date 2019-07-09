@@ -39,6 +39,12 @@
 (global-linum-mode t)
 (setq linum-format "%4d ")
 
+;; highlighting current line number
+(require 'hlinum)
+(hlinum-activate)
+(set-face-foreground 'linum-highlight-face "magenta")
+(set-face-background 'linum-highlight-face "black")
+
 ;; visualize region
 (setq transient-mark-mode t)
 
