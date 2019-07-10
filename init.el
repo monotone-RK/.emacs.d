@@ -13,7 +13,6 @@
 (defvar installing-package-list
   '(
     init-loader
-    font-lock+
     popwin
     auto-highlight-symbol
     highlight-symbol
@@ -42,7 +41,6 @@
     gnuplot-mode
     rainbow-delimiters
     volatile-highlights
-    dired+
     smartparens
     expand-region
     exec-path-from-shell
