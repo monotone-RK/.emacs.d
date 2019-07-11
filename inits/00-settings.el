@@ -136,10 +136,14 @@
   (let ((message-log-max nil))
     `(with-temp-message (or (current-message) "") ,@body)))
 
-(require 'recentf)
-(setq recentf-max-saved-items 1000)
-(setq recentf-exclude '(".recentf"))
-(setq recentf-auto-cleanup 'never)
-(run-with-idle-timer 30 t '(lambda ()
-   (with-suppressed-message (recentf-save-list))))
-(require 'recentf-ext)
+(when (require 'recentf-ext nil t)
+  (setq recentf-max-saved-items 2000)
+  (setq recentf-exclude '(".recentf"))
+  (setq recentf-auto-cleanup 'never)
+  (setq recentf-auto-save-timer
+	(run-with-idle-timer 30 t '(lambda ()
+				     (with-suppressed-message (recentf-save-list)))))
+  (recentf-mode 1))
+
+;; windmove
+(windmove-default-keybindings) ; using shift key
