@@ -63,6 +63,7 @@
     hlinum
     mykie
     recentf-ext
+    tabbar
     ))
 
 (let ((not-installed (loop for x in installing-package-list
