@@ -60,6 +60,7 @@
     lua-mode
     yatex
     hlinum
+    mykie
     ))
 
 (let ((not-installed (loop for x in installing-package-list
