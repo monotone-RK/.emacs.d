@@ -49,7 +49,8 @@
     multiple-cursors
     phi-search
     replace-from-region
-    dirtree
+    dirtree  ;; might be replaced with neotree
+    neotree
     migemo
     helm
     helm-swoop
