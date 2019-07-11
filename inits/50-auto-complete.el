@@ -1,5 +1,6 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
+(require 'fuzzy) ;; fuzzy search
 (ac-config-default)
 (global-auto-complete-mode t)
 ;; customize

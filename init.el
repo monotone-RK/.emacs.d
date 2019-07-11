@@ -18,6 +18,7 @@
     highlight-symbol
     undo-tree
     auto-complete
+    fuzzy
     google-translate
     google-c-style
     cuda-mode
