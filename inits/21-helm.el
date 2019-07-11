@@ -54,3 +54,12 @@
 			     (helm-candidates-in-buffer (helm-get-current-source)))))
 		   (volatile) (match identity)))
        source)))
+
+;; helm-ag
+(require 'helm-ag)
+(when (executable-find "rg") ; if command exists
+  (setq helm-ag-base-command "rg -S --vimgrep --no-heading")
+  )
+
+;; helm-flycheck
+(require 'helm-flycheck) ;; Not necessary if using ELPA package

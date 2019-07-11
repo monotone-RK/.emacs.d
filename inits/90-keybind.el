@@ -42,3 +42,9 @@
 
 ;; helm-swoop
 (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+
+;; helm-ag
+(define-key global-map (kbd "C-c a") 'helm-do-ag)
+
+;; helm-flycheck
+(define-key global-map (kbd "C-c @") 'helm-flycheck)

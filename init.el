@@ -56,6 +56,8 @@
     helm-swoop
     helm-migemo
     helm-gtags
+    helm-ag
+    helm-flycheck
     ace-isearch
     opencl-mode
     lua-mode
