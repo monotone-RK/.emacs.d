@@ -130,10 +130,16 @@
 (setq kill-whole-line t)
 
 ;; Remember recently opend files
-(when (require 'recentf nil t)
-  (setq recentf-max-saved-items 2000)
-  (setq recentf-exclude '(".recentf"))
-  (setq recentf-auto-cleanup 10)
-  (setq recentf-auto-save-timer
-        (run-with-idle-timer 30 t 'recentf-save-list))
-  (recentf-mode 1))
+(defmacro with-suppressed-message (&rest body)
+  "Suppress new messages temporarily in the echo area and the `*Messages*' buffer while BODY is evaluated."
+  (declare (indent 0))
+  (let ((message-log-max nil))
+    `(with-temp-message (or (current-message) "") ,@body)))
+
+(require 'recentf)
+(setq recentf-max-saved-items 1000)
+(setq recentf-exclude '(".recentf"))
+(setq recentf-auto-cleanup 'never)
+(run-with-idle-timer 30 t '(lambda ()
+   (with-suppressed-message (recentf-save-list))))
+(require 'recentf-ext)

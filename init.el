@@ -62,6 +62,7 @@
     yatex
     hlinum
     mykie
+    recentf-ext
     ))
 
 (let ((not-installed (loop for x in installing-package-list
